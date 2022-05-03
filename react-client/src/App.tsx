@@ -9,24 +9,26 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  paddingg: 1em;
+  padding: 1em;
+`;
+
+const WelcomeText = styled.h1`
+  margin: 0;
+  color: #8e44ad;
+`;
+
+const MainContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 function App() {
-  const connect = () => {
-    const socket = io('http://localhost:9000');
-
-    socket.on('connect', () => {
-      socket.emit('custom_event', { name: 'hyzen', age: '23' });
-    });
-  };
-
-  useEffect(() => {
-    connect();
-  }, []);
-
   return (
     <AppContainer>
-      <h1>Welcome to Tic-Tac-Toe</h1>
+      <WelcomeText> Welcome to Tic-Tac-Toe</WelcomeText>
+      <MainContainer>Hey!</MainContainer>
     </AppContainer>
   );
 }
