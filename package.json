@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "babel-loader": "^8.2.5",
+    "express": "^4.18.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.6.0"
+  },
+  "name": "realtime_tic_tac_toe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajat-panwar1/realtime_tic_tac_toe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajat-panwar1/realtime_tic_tac_toe/issues"
+  },
+  "homepage": "https://github.com/rajat-panwar1/realtime_tic_tac_toe#readme",
+  "description": ""
+}
