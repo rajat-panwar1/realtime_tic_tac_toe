@@ -4,15 +4,17 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('realtime-tic-tac-toe:server');
-var http = require('http');
+import 'reflect-metadata';
+import app from './app';
+var debug = require('debug')('socketio-server:server');
+import * as http from 'http';
+import socketServer from './socket';
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '9000');
 app.set('port', port);
 
 /**
@@ -28,6 +30,8 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+const io = socketServer(server);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -58,9 +62,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -83,8 +85,8 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
+
+  console.log('Server Running on Port: ', port);
 }
