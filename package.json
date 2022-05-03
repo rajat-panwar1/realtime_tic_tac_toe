@@ -2,7 +2,11 @@
   "dependencies": {
     "babel-loader": "^8.2.5",
     "express": "^4.18.1",
+    "nodemon": "^2.0.16",
     "uuid": "^8.3.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
     "ws": "^8.6.0"
   },
   "name": "realtime_tic_tac_toe",
